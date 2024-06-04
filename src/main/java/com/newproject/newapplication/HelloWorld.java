@@ -11,4 +11,9 @@ public class HelloWorld {
     public String hello() {
         return "Hello World";
     }
+
+    @GetMapping("/home")
+    public String home() {
+        return "<h1>Welcome to HOme Section</h1>";
+    }
 }
