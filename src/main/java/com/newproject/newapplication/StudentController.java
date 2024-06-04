@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.newproject.Student.Student;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 public class StudentController {
@@ -25,6 +27,15 @@ public class StudentController {
     public List<Student> returnstuednts(){
         return Students;
     }
+
+
+    @PostMapping("/addstudent")
+    public String postMethodName(@RequestBody String entity) {
+        Students.add(new Student(entity,entity));
+        
+        return entity;
+    }
+    
 
 
     
